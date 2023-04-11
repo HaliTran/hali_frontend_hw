@@ -8,10 +8,13 @@ const handleInput = function isPalindrome() {
     response.innerHTML = '';
   } else if (Number(numAsString) < 0) {
     response.innerHTML = 'Invalid input! Please enter a positive number';
+    response.style.color = 'red';
   } else if (numAsString === numAsString.split('').reverse().join('')) {
     response.innerHTML = 'Yes. This is a palindrome!';
+    response.style.color = 'green';
   } else {
     response.innerHTML = 'No. Try again!';
+    response.style.color = 'red';
   }
 };
 
