@@ -1,15 +1,22 @@
 const elem = document.querySelector('input');
 const response = document.getElementById('response');
 
-const handleInput = function isPalindrome() {
-  const numAsString = elem.value;
+const isPalindrome = function checkIfPalindrome(input) {
+  if (input === input.split('').reverse().join('')) {
+    return true;
+  }
+  return false;
+};
 
-  if (isNaN(numAsString) || !numAsString) {
+const handleInput = function handleUserInput() {
+  const { value } = elem;
+
+  if (isNaN(value) || !value) {
     response.innerHTML = '';
-  } else if (Number(numAsString) < 0) {
+  } else if (Number(value) < 0) {
     response.innerHTML = 'Invalid input! Please enter a positive number';
     response.style.color = 'red';
-  } else if (numAsString === numAsString.split('').reverse().join('')) {
+  } else if (isPalindrome(value)) {
     response.innerHTML = 'Yes. This is a palindrome!';
     response.style.color = 'green';
   } else {
