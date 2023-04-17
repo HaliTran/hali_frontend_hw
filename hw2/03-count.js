@@ -1,3 +1,6 @@
-// Add your code here
+const pattern = document.querySelector('input');
+const text = document.getElementById('given-text');
 
-input.addEventListener('keydown', handleKeyDown);
+const userInput = function checkUserInput() {};
+
+pattern.addEventListener('keydown', userInput);
