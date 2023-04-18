@@ -16,17 +16,17 @@
       <form class="w-50 m-auto mt-5 p-3 bg-light rounded">
         <h1 class="text-center mb-4">Exercise 05 - Form</h1>
 
-        <div>
+        <div class="mb-3">
           <label for="name" class="form-label fw-bold">Full Name:</label>
           <input type="text" id="name" name="fullName" class="form-control" />
         </div>
 
-        <div>
+        <div class="mb-3">
           <label for="email" class="form-label fw-bold">Email:</label>
           <input type="email" id="email" name="email" class="form-control" />
         </div>
 
-        <div>
+        <div class="mb-3">
           <label for="status" class="form-label fw-bold"
             >Registration Status:</label
           >
@@ -38,45 +38,46 @@
           </select>
         </div>
 
-        <p class="fw-bold">Have you taken any of the following courses?</p>
+        <div class="mb-3">
+          <p class="fw-bold">Have you taken any of the following courses?</p>
+          <div class="form-check">
+            <label for="prog-lang" class="form-check-label"
+              >Programming Languages</label
+            >
+            <input
+              type="checkbox"
+              id="prog-lang"
+              name="prog-lang"
+              class="form-check-input"
+            />
+          </div>
 
-        <div class="form-check">
-          <label for="prog-lang" class="form-check-label"
-            >Programming Languages</label
-          >
-          <input
-            type="checkbox"
-            id="prog-lang"
-            name="prog-lang"
-            class="form-check-input"
-          />
+          <div class="form-check">
+            <label for="op-system" class="form-check-label"
+              >Operating Systems</label
+            >
+            <input
+              type="checkbox"
+              id="op-system"
+              name="op-system"
+              class="form-check-input"
+            />
+          </div>
+
+          <div class="form-check">
+            <label for="full-stack" class="form-check-label"
+              >Full Stack Web Development</label
+            >
+            <input
+              type="checkbox"
+              id="full-stack"
+              name="full-stack"
+              class="form-check-input"
+            />
+          </div>
         </div>
 
-        <div class="form-check">
-          <label for="op-system" class="form-check-label"
-            >Operating Systems</label
-          >
-          <input
-            type="checkbox"
-            id="op-system"
-            name="op-system"
-            class="form-check-input"
-          />
-        </div>
-
-        <div class="form-check">
-          <label for="full-stack" class="form-check-label"
-            >Full Stack Web Development</label
-          >
-          <input
-            type="checkbox"
-            id="full-stack"
-            name="full-stack"
-            class="form-check-input"
-          />
-        </div>
-
-        <div>
+        <div class="mb-3">
           <label for="extra-info fw-bold" class="form-label fw-bold"
             >Anything else?</label
           >
@@ -89,7 +90,7 @@
           ></textarea>
         </div>
 
-        <div class="p-3">
+        <div class="mb-3">
           <input type="submit" value="Submit" class="btn btn-primary" />
           <input type="reset" value="Reset" class="btn btn-secondary" />
         </div>
