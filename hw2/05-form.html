@@ -7,13 +7,59 @@
     <title>05 - Form</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
     <script defer src="05-form.js"></script>
   </head>
   <body>
     <main>
       <form>
         <h1>Exercise 05 - Form</h1>
+        <div>
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="fullName" />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="" id="" />
+        </div>
+        <div>
+          <label for="status">Registration Status:</label>
+          <select name="status" id="status">
+            <option value="">Choose an Option</option>
+            <option value="waitlist">Waitlist</option>
+            <option value="registered">Registered</option>
+            <option value="full">Full</option>
+          </select>
+        </div>
+        <fieldset>
+          <p>Have you taken any of the following courses?</p>
+          <div>
+            <label for="prog-lang">Programming Languages</label>
+            <input type="checkbox" id="prog-lang" name="prog-lang" />
+          </div>
+          <div>
+            <label for="op-system">Operating Systems</label>
+            <input type="checkbox" id="op-system" name="op-system" />
+          </div>
+          <div>
+            <label for="full-stack">Full Stack Web Development</label>
+            <input type="checkbox" id="full-stack" name="full-stack" />
+          </div>
+        </fieldset>
+        <div>
+          <label for="extra-info">Anything else?</label>
+          <textarea
+            name="extra-info"
+            id="extra-info"
+            cols="30"
+            rows="5"
+          ></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Submit" />
+          <input type="reset" value="Reset" />
+        </div>
       </form>
     </main>
   </body>
