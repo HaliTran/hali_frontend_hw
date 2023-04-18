@@ -11,19 +11,19 @@
     />
     <script defer src="05-form.js"></script>
   </head>
-  <body>
+  <body class="bg-dark">
     <main>
-      <form>
-        <h1>Exercise 05 - Form</h1>
-        <div>
+      <form class="w-50 m-auto mt-5 p-3 bg-light rounded">
+        <h1 class="text-center mb-4">Exercise 05 - Form</h1>
+        <div class="p-2">
           <label for="name">Full Name:</label>
           <input type="text" id="name" name="fullName" />
         </div>
-        <div>
+        <div class="p-3">
           <label for="email">Email:</label>
           <input type="email" name="" id="" />
         </div>
-        <div>
+        <div class="p-3">
           <label for="status">Registration Status:</label>
           <select name="status" id="status">
             <option value="">Choose an Option</option>
@@ -32,7 +32,7 @@
             <option value="full">Full</option>
           </select>
         </div>
-        <fieldset>
+        <fieldset class="p-3">
           <p>Have you taken any of the following courses?</p>
           <div>
             <label for="prog-lang">Programming Languages</label>
@@ -47,7 +47,7 @@
             <input type="checkbox" id="full-stack" name="full-stack" />
           </div>
         </fieldset>
-        <div>
+        <div class="p-3">
           <label for="extra-info">Anything else?</label>
           <textarea
             name="extra-info"
@@ -56,7 +56,7 @@
             rows="5"
           ></textarea>
         </div>
-        <div>
+        <div class="p-3">
           <input type="submit" value="Submit" />
           <input type="reset" value="Reset" />
         </div>
