@@ -1,8 +1,7 @@
 const pattern = document.querySelector('input');
 const text = document.getElementById('given-text');
-const textArray = text.innerText.split(' ');
-console.log(text.innerText);
-console.log(textArray);
+const addSpace = text.innerText.replaceAll(',', ' ,').replace('—', ' — ');
+const textArray = addSpace.split(' ');
 
 const checkPattern = function checkMatchingPattern() {
   const { value } = pattern;
@@ -15,7 +14,9 @@ const checkPattern = function checkMatchingPattern() {
       textToReplace[i] = textArray[i];
     }
   }
+
   textToReplace = textToReplace.join(' ');
+  textToReplace = textToReplace.replaceAll(' , ', ', ').replaceAll(' — ', '—');
   text.innerHTML = textToReplace;
 };
 
