@@ -5,10 +5,10 @@ let repeatingColor = true;
 let intervalID;
 
 const changeBackground = function changeBackgroundColor() {
-  let redColor = Math.floor(Math.random() * 256);
-  let greenColor = Math.floor(Math.random() * 256);
-  let blueColor = Math.floor(Math.random() * 256);
-  let alpha = Math.random();
+  const redColor = Math.floor(Math.random() * 256);
+  const greenColor = Math.floor(Math.random() * 256);
+  const blueColor = Math.floor(Math.random() * 256);
+  const alpha = Math.random();
 
   bodyElem.style.backgroundColor = `rgba(${redColor},${greenColor},${blueColor},${alpha})`;
 };

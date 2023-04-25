@@ -5,15 +5,9 @@ const textArray = addSpace.split(' ');
 
 const checkPattern = function checkMatchingPattern() {
   const { value } = pattern;
-  let textToReplace = [];
-
-  for (let i = 0; i < textArray.length; ++i) {
-    if (value === textArray[i]) {
-      textToReplace[i] = `<span class="bg-success">${value}</span>`;
-    } else {
-      textToReplace[i] = textArray[i];
-    }
-  }
+  let textToReplace = textArray.map((word) => {
+    return word === value ? `<span class="bg-success">${value}</span>` : word;
+  });
 
   textToReplace = textToReplace.join(' ');
   textToReplace = textToReplace.replaceAll(' , ', ', ').replaceAll(' — ', '—');
