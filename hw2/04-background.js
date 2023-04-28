@@ -25,6 +25,11 @@ window.addEventListener('load', () => {
 });
 
 button.addEventListener('click', () => {
+  const { value } = intervalInput;
+
+  if (value <= 0) {
+    return;
+  }
   if (repeatingColor) {
     repeatingColor = false;
     button.setAttribute('class', 'btn btn-primary');
