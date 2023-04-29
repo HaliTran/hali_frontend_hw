@@ -23,6 +23,7 @@ const createElements = function createThroneElements() {
         'alt',
         `photo of GOT character ${element.fullName}`
       );
+
       nameElement.innerText = element.fullName;
       titleElement.innerText = element.title;
 
@@ -34,3 +35,5 @@ const createElements = function createThroneElements() {
     });
   });
 };
+
+createElements();
