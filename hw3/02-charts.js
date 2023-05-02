@@ -41,6 +41,28 @@ const getThroneData = async () => {
   }
 };
 
+const storeThroneData = async () => {
+  const data = await getThroneData();
+  throneHouses = data.map((character) => character.family);
+
+  throneHouses = [...new Set(throneHouses)].filter((character) => {
+    return character && character.includes('House');
+  });
+
+  throneHousesCharacterNum = throneHouses.map(() => 0);
+  data.forEach((character) => {
+    const familyIdx = throneHouses.indexOf(character.family);
+    if (familyIdx != -1) {
+      ++throneHousesCharacterNum[familyIdx];
+    }
+  });
+};
+
+const createThroneChart = async () => {
+  await storeThroneData();
+  renderChart(throneHouses, throneHousesCharacterNum);
+};
+
 const renderChart = (xValues, yValues) => {
   const donutChart = document.querySelector('.donut-chart');
 
@@ -60,3 +82,5 @@ const renderChart = (xValues, yValues) => {
     },
   });
 };
+
+createThroneChart();
