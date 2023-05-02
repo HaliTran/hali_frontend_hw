@@ -28,18 +28,30 @@ const borderColors = [
 
 // url for the Thrones API
 const url = 'https://thronesapi.com/api/v2/Characters';
+let throneHouses;
+let throneHousesCharacterNum;
 
-const renderChart = () => {
+const getThroneData = async () => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const renderChart = (xValues, yValues) => {
   const donutChart = document.querySelector('.donut-chart');
 
   new Chart(donutChart, {
     type: 'doughnut',
     data: {
-      labels: ['label', 'label', 'label', 'label'],
+      labels: xValues,
       datasets: [
         {
-          label: 'My First Dataset',
-          data: [1, 12, 33, 5],
+          label: 'Game of Thrones Houses',
+          data: yValues,
           backgroundColor: backgroundColors,
           borderColor: borderColors,
           borderWidth: 1,
@@ -48,5 +60,3 @@ const renderChart = () => {
     },
   });
 };
-
-renderChart();
