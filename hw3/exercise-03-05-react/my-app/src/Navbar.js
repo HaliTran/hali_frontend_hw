@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Routes, Link, Outlet } from 'react-router-dom';
-import Home from './pages/home';
-import Houses from './pages/houses';
-import Search from './pages/search';
+import Home from './pages/Home';
+import Houses from './pages/Houses';
+import Search from './pages/Search';
 
 export default function Navbar() {
   return (
