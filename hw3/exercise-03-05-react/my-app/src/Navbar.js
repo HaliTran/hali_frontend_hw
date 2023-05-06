@@ -6,17 +6,23 @@ import Search from './pages/search';
 
 export default function Navbar() {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
+    <div className='w-75 m-auto text-center'>
+      <nav className='navbar navbar-expand-sm justify-content-center'>
+        <ul className='navbar-nav'>
+          <li className='nav-link'>
+            <Link to='/' className='text-decoration-none'>
+              Home
+            </Link>
           </li>
-          <li>
-            <Link to="/search">Search</Link>
+          <li className='nav-link'>
+            <Link to='/search' className='text-decoration-none'>
+              Search
+            </Link>
           </li>
-          <li>
-            <Link to="/houses">Houses</Link>
+          <li className='nav-link'>
+            <Link to='/houses' className='text-decoration-none'>
+              Houses
+            </Link>
           </li>
         </ul>
       </nav>
@@ -24,9 +30,9 @@ export default function Navbar() {
       <Outlet />
 
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/search" element={<Search />}></Route>
-        <Route path="/houses" element={<Houses />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/search' element={<Search />}></Route>
+        <Route path='/houses' element={<Houses />}></Route>
       </Routes>
     </div>
   );
