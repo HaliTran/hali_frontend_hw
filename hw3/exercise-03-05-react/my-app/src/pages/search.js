@@ -5,6 +5,7 @@ import axios from 'axios';
 export default function Search() {
   const [data, setData] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [characterInfo, setCharacterInfo] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,19 +24,30 @@ export default function Search() {
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
-    console.log('The input value has changed!');
   };
 
   const handleButtonClick = () => {
-    console.log('The button has been clicked');
+    let info;
+
+    for (let i = 0; i < data.length; ++i) {
+      if (data[i].firstName.toLowerCase() === inputValue.toLowerCase()) {
+        info = {
+          fullName: data[i].fullName,
+          imageUrl: data[i].imageUrl,
+        };
+        setCharacterInfo(info);
+        return;
+      }
+    }
+    setCharacterInfo(false);
   };
 
   return (
     <div>
       <Home />
-      <h1>This is the Search Page!</h1>
+      <h1>Game of Thrones Character</h1>
       <div>
-        <label htmlFor='character'>Enter a character name</label>
+        <label htmlFor='character'>Enter a character name: </label>
         <input
           type='text'
           id='character'
@@ -45,6 +57,15 @@ export default function Search() {
         />
         <button onClick={handleButtonClick}>Search</button>
       </div>
+      {characterInfo && (
+        <div>
+          <h1>{characterInfo.fullName}</h1>
+          <img
+            src={characterInfo.imageUrl}
+            alt={`GOT character ${characterInfo.fullName}`}
+          />
+        </div>
+      )}
     </div>
   );
 }
