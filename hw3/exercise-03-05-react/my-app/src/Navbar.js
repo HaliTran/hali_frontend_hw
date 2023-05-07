@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Routes, Link, Outlet } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Houses from './pages/Houses';
 import Search from './pages/Search';
@@ -26,8 +26,6 @@ export default function Navbar() {
           </li>
         </ul>
       </nav>
-
-      <Outlet />
 
       <Routes>
         <Route path='/' element={<Home />}></Route>
