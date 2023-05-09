@@ -6,7 +6,7 @@ import Search from './pages/Search';
 
 export default function Navbar() {
   return (
-    <div className='w-75 m-auto text-center'>
+    <div className='w-75 m-auto'>
       <nav className='navbar navbar-expand-sm justify-content-center'>
         <ul className='navbar-nav'>
           <li className='nav-link'>

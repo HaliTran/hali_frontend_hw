@@ -45,20 +45,29 @@ export default function Search() {
   return (
     <div>
       <Home />
-      <h1>Game of Thrones Character</h1>
-      <div>
-        <label htmlFor='character'>Enter a character name: </label>
-        <input
-          type='text'
-          id='character'
-          name='character'
-          value={inputValue}
-          onChange={handleInputChange}
-        />
-        <button onClick={handleButtonClick}>Search</button>
+      <h1 className='text-center'>Game of Thrones Character</h1>
+      <div className='w-50 m-auto mt-3 text-center'>
+        <div>
+          <label htmlFor='character' className='form-label'>
+            Enter a character name:{' '}
+          </label>
+          <input
+            type='text'
+            id='character'
+            name='character'
+            value={inputValue}
+            onChange={handleInputChange}
+            className='form-control'
+          />
+        </div>
+        <div className='mt-3'>
+          <button onClick={handleButtonClick} className='btn btn-primary'>
+            Search
+          </button>
+        </div>
       </div>
       {characterInfo && (
-        <div>
+        <div className='w-50 m-auto mt-4 text-center'>
           <h1>{characterInfo.fullName}</h1>
           <img
             src={characterInfo.imageUrl}
