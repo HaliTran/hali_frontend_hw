@@ -29,7 +29,10 @@ export default function Navbar(prop) {
 
       <Routes>
         <Route path='/' element={<Home />}></Route>
-        <Route path='/search' element={<Search />}></Route>
+        <Route
+          path='/search'
+          element={<Search character={prop.character} />}
+        ></Route>
         <Route
           path='/houses'
           element={<Houses character={prop.character} />}

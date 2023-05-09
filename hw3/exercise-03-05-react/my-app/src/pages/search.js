@@ -1,39 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import { React, useState } from 'react';
 import Home from './Home';
-import axios from 'axios';
 
-export default function Search() {
-  const [data, setData] = useState([]);
+export default function Search(prop) {
   const [inputValue, setInputValue] = useState('');
   const [characterInfo, setCharacterInfo] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://thronesapi.com/api/v2/Characters'
-        );
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { character } = prop;
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
   const handleButtonClick = () => {
-    let info;
-
-    for (let i = 0; i < data.length; ++i) {
-      if (data[i].firstName.toLowerCase() === inputValue.toLowerCase()) {
-        info = {
-          fullName: data[i].fullName,
-          imageUrl: data[i].imageUrl,
+    for (let i = 0; i < character.length; ++i) {
+      if (character[i].firstName.toLowerCase() === inputValue.toLowerCase()) {
+        const info = {
+          fullName: character[i].fullName,
+          imageUrl: character[i].imageUrl,
         };
         setCharacterInfo(info);
         return;
