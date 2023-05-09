@@ -4,7 +4,7 @@ import Home from './pages/Home';
 import Houses from './pages/Houses';
 import Search from './pages/Search';
 
-export default function Navbar() {
+export default function Navbar(prop) {
   return (
     <div className='w-75 m-auto'>
       <nav className='navbar navbar-expand-sm justify-content-center'>
@@ -30,7 +30,10 @@ export default function Navbar() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/search' element={<Search />}></Route>
-        <Route path='/houses' element={<Houses />}></Route>
+        <Route
+          path='/houses'
+          element={<Houses character={prop.character} />}
+        ></Route>
       </Routes>
     </div>
   );
