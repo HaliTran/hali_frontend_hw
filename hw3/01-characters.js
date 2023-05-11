@@ -1,15 +1,21 @@
 const url = 'https://thronesapi.com/api/v2/Characters';
 const container = document.getElementById('container');
 
-const getData = function getData() {
+const getData = () => {
   return new Promise((resolve, reject) => {
     fetch(url)
-      .then((response) => response.json())
-      .then((data) => resolve(data));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('There was an error fetching the data.');
+        }
+        return response.json();
+      })
+      .then((data) => resolve(data))
+      .catch((error) => console.error(error));
   });
 };
 
-const createElements = function createThroneElements() {
+const createElements = () => {
   const throneElement = getData();
   throneElement.then((data) => {
     data.forEach((element) => {
