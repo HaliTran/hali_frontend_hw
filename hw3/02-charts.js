@@ -52,15 +52,10 @@ const storeThroneData = async () => {
   throneHousesCharacterNum = throneHouses.map(() => 0);
   data.forEach((character) => {
     const familyIdx = throneHouses.indexOf(character.family);
-    if (familyIdx != -1) {
-      ++throneHousesCharacterNum[familyIdx];
+    if (familyIdx !== -1) {
+      throneHousesCharacterNum[familyIdx] += 1;
     }
   });
-};
-
-const createThroneChart = async () => {
-  await storeThroneData();
-  renderChart(throneHouses, throneHousesCharacterNum);
 };
 
 const renderChart = (xValues, yValues) => {
@@ -81,6 +76,11 @@ const renderChart = (xValues, yValues) => {
       ],
     },
   });
+};
+
+const createThroneChart = async () => {
+  await storeThroneData();
+  renderChart(throneHouses, throneHousesCharacterNum);
 };
 
 createThroneChart();

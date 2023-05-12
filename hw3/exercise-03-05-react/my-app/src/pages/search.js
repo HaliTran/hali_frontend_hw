@@ -24,6 +24,12 @@ export default function Search(prop) {
     setCharacterInfo(false);
   };
 
+  const handleEnterKey = (event) => {
+    if (event.key === 'Enter') {
+      handleButtonClick();
+    }
+  };
+
   return (
     <div>
       <Home />
@@ -31,7 +37,7 @@ export default function Search(prop) {
       <div className='w-50 m-auto mt-3 text-center'>
         <div>
           <label htmlFor='character' className='form-label'>
-            Enter a character name:{' '}
+            Enter a character's first name:
           </label>
           <input
             type='text'
@@ -39,6 +45,7 @@ export default function Search(prop) {
             name='character'
             value={inputValue}
             onChange={handleInputChange}
+            onKeyDown={handleEnterKey}
             className='form-control'
           />
         </div>

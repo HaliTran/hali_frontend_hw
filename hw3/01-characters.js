@@ -2,7 +2,7 @@ const url = 'https://thronesapi.com/api/v2/Characters';
 const container = document.getElementById('container');
 
 const getData = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     fetch(url)
       .then((response) => {
         if (!response.ok) {
